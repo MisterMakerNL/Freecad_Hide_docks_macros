@@ -1,0 +1,23 @@
+# -*- coding: utf-8 -*-
+# macro to toggle visibility of Report view, Python console, Combo view
+from PySide import QtCore, QtGui
+mainWindow = FreeCADGui.getMainWindow()
+dockWidgets = mainWindow.findChildren(QtGui.QDockWidget)
+for dw in dockWidgets:
+    if dw.objectName() == "Python console":
+        pcWidget = dw
+    if dw.objectName() == "Combo View":
+        cvWidget = dw
+    if dw.objectName() == "Report view":
+        rvWidget = dw
+    if dw.objectName() == "Property view":
+        pvWidget = dw
+    if dw.objectName() == "Selection view":
+        svWidget = dw
+          
+
+pcWidget.hide()
+cvWidget.hide()
+#    rvWidget.hide()
+pvWidget.show()
+svWidget.hide()

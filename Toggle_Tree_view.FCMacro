@@ -1,0 +1,16 @@
+# -*- coding: utf-8 -*-
+# macro to toggle visibility of Report view, Python console, Combo view
+from PySide import QtCore, QtGui
+mainWindow = FreeCADGui.getMainWindow()
+dockWidgets = mainWindow.findChildren(QtGui.QDockWidget)
+for dw in dockWidgets:
+    if dw.objectName() == "Tree view":
+        tvWidget = dw
+
+     
+if tvWidget.isVisible():
+    tvWidget.hide()
+
+else:
+    tvWidget.show()
+	

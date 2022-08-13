@@ -1,0 +1,11 @@
+import FreeCAD
+import FreeCADGui
+
+param = FreeCAD.ParamGet("User parameter:BaseApp/Preferences/View")
+
+if param.GetBool('ShowNaviCube'):
+  param.SetBool('ShowNaviCube',False)
+  FreeCADGui.ActiveDocument.ActiveView.redraw()
+else:
+  param.SetBool('ShowNaviCube',True)
+  FreeCADGui.ActiveDocument.ActiveView.redraw()	
